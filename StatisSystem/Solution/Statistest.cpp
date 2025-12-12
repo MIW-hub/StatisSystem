@@ -192,7 +192,7 @@ int main()
 			break;
 		case 5:
 			cout << "상태창 !!." << endl;
-			cout << "이름 :" << p1.name << endl << "HP :" << p1.hp << endl << "MP :" << p1.mp << endl << "공격력 :" << p1.power << endl << "방어력 :" << p1.defense << endl << "포션개수" << p1.HpPotion << "/" << p1.MpPotion << endl;
+			cout << "이름 :" << p1.name << endl << "레벨 :" << p1.level << endl << "HP :" << p1.hp << endl << "MP :" << p1.mp << endl << "공격력 :" << p1.power << endl << "방어력 :" << p1.defense << endl << "포션개수" << p1.HpPotion << "/" << p1.MpPotion << endl;
 			break;
 		case 6:
 			cout << "레벨이 상승되었습니다. 포션이 1개씩 추가됩니다." << endl;
