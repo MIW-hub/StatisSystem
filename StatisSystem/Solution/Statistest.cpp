@@ -7,13 +7,14 @@ class StatisSetting
 {
 public:
 	string name;
-	int hp, mp, power, defense;
+	int level,hp, mp, power, defense;
 	int HpPotion, MpPotion;
 	bool PowerBuff;
 	bool DefenseBuff;
 
 	StatisSetting() {
 		name = "";
+		level = 1;
 		hp = 0;
 		mp = 0;
 		power = 0;
@@ -76,6 +77,7 @@ void DefenseDown(int& num) {
 	num = num / 2;
 }
 void levelup(StatisSetting* player) {
+	player->level++;
 	player->HpPotion++;
 	player->MpPotion++;
 }
@@ -193,7 +195,7 @@ int main()
 			cout << "이름 :" << p1.name << endl << "HP :" << p1.hp << endl << "MP :" << p1.mp << endl << "공격력 :" << p1.power << endl << "방어력 :" << p1.defense << endl << "포션개수" << p1.HpPotion << "/" << p1.MpPotion << endl;
 			break;
 		case 6:
-			cout << "레벨이 상승되었습니다." << endl;
+			cout << "레벨이 상승되었습니다. 포션이 1개씩 추가됩니다." << endl;
 			levelup(&p1);
 			break;
 		case 0:
