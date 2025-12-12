@@ -12,6 +12,7 @@ public:
 	bool PowerBuff;
 	bool DefenseBuff;
 
+	// 클래스 초기화
 	StatisSetting() {
 		name = "";
 		level = 1;
@@ -25,14 +26,15 @@ public:
 		DefenseBuff = false;
 	}
 
-
+	// 이름을 저장
 	string CharName(string p1Name) {
 		name = p1Name;
 		return name;
 	}
 
 };
-// 왜 반복이 안되지?!!?!
+// 포션 사용 - 포션 총개수 10개 hp/mp 5/5개, hp/mp 20 상승
+// 포인터를 통한 main함수에 클래스 객체 및 주소값을 불러오기
 void setPotion(StatisSetting* player, int* p_HPPotion, int* p_MPPotion) {
 
 	int Recovery = 20;	
@@ -61,22 +63,30 @@ void setPotion(StatisSetting* player, int* p_HPPotion, int* p_MPPotion) {
 		}
 	}	 
 }
-void PowerUp(int& num) {
+// 공/방 버프 업/다운
+void PowerUp(int& num) 
+{
 	num = num * 2;
 }
 
-void Powerdown(int& num) {
+void Powerdown(int& num) 
+{
 	num = num / 2;
 }
 
-void DefenseUp(int& num) {
+void DefenseUp(int& num) 
+{
 	num = num * 2;
 }
 
-void DefenseDown(int& num) {
+void DefenseDown(int& num) 
+{
 	num = num / 2;
 }
-void levelup(StatisSetting* player) {
+
+// 레벨업 + , 포션 추가
+void levelup(StatisSetting* player) 
+{
 	player->level++;
 	player->HpPotion++;
 	player->MpPotion++;
@@ -98,6 +108,8 @@ int main()
 	bool& PBuff = p1.PowerBuff;
 	bool& DBuff = p1.DefenseBuff;
 
+
+	// 이름 작성
 	cout << "이름이 작성해주세요." << endl;
 	cin >> InputName;
 
@@ -149,9 +161,11 @@ int main()
 		}
 	}
 
-	cout << p1.name << "TRPG 세계로 오신 것을 환영합니다." << endl;
+	cout << "" << endl;
+	cout << p1.name << "TRPG(Text role-playing game) 세계로 오신 것을 환영합니다." << endl;
 	
-	do {
+	while (inputChoice != 0) {
+		cout << "" << endl;
 		cout << "선택지를 정해주세요" << endl;
 		cout << "1. HP 포션" << endl << "2. MP 포션" << endl << "3. 공격력버프" << endl << "4. 방어력버프" << endl << "5. 현재상태" << endl << "6. 레벨업" << endl << "7. 종료" << endl;
 		cin >> inputChoice;
@@ -206,7 +220,7 @@ int main()
 			break;
 		}
 		cout << ""<<endl << "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" << endl;
-	} while (inputChoice != 0);
+	} 
 	
 	
 
